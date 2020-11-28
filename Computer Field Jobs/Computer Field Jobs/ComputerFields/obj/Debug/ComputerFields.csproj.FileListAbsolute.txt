@@ -1,0 +1,35 @@
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\mdiExample.MDINBCC.resources
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\ComputerFields.csproj.GenerateResource.cache
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\ComputerFields.csproj.CoreCompileInputs.cache
+D:\wut down\mdiExample\mdiExample\mdiExample\bin\Debug\ComputerFields.exe.config
+D:\wut down\mdiExample\mdiExample\mdiExample\bin\Debug\ComputerFields.exe
+D:\wut down\mdiExample\mdiExample\mdiExample\bin\Debug\ComputerFields.pdb
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\ComputerFields.csprojAssemblyReference.cache
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\ComputerFields.LoginPage.resources
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\ComputerFields.Properties.Resources.resources
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\ComputerFields.exe
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\ComputerFields.pdb
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\ComputerFields.SplashScreen.resources
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\ComputerFields.frmJobs.resources
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\ComputerFields.frmSubjects.resources
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\mdiExample.frmAddSubject.resources
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\ComputerFields.frmAddJobs.resources
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\ComputerFields.SubjectRelatedJobs.resources
+C:\Users\MSI\Documents\itgex\IT-GEX\sem4\databe programming\DBProgrammingProject\Computer Field Jobs\Computer Field Jobs\ComputerFields\bin\Debug\ComputerFields.exe.config
+C:\Users\MSI\Documents\itgex\IT-GEX\sem4\databe programming\DBProgrammingProject\Computer Field Jobs\Computer Field Jobs\ComputerFields\bin\Debug\ComputerFields.exe
+C:\Users\MSI\Documents\itgex\IT-GEX\sem4\databe programming\DBProgrammingProject\Computer Field Jobs\Computer Field Jobs\ComputerFields\bin\Debug\ComputerFields.pdb
+C:\Users\MSI\Documents\itgex\IT-GEX\sem4\databe programming\DBProgrammingProject\Computer Field Jobs\Computer Field Jobs\ComputerFields\obj\Debug\ComputerFields.csprojAssemblyReference.cache
+C:\Users\MSI\Documents\itgex\IT-GEX\sem4\databe programming\DBProgrammingProject\Computer Field Jobs\Computer Field Jobs\ComputerFields\obj\Debug\ComputerFields.frmAddJobs.resources
+C:\Users\MSI\Documents\itgex\IT-GEX\sem4\databe programming\DBProgrammingProject\Computer Field Jobs\Computer Field Jobs\ComputerFields\obj\Debug\mdiExample.frmAddSubject.resources
+C:\Users\MSI\Documents\itgex\IT-GEX\sem4\databe programming\DBProgrammingProject\Computer Field Jobs\Computer Field Jobs\ComputerFields\obj\Debug\ComputerFields.frmJobs.resources
+C:\Users\MSI\Documents\itgex\IT-GEX\sem4\databe programming\DBProgrammingProject\Computer Field Jobs\Computer Field Jobs\ComputerFields\obj\Debug\ComputerFields.frmSubjects.resources
+C:\Users\MSI\Documents\itgex\IT-GEX\sem4\databe programming\DBProgrammingProject\Computer Field Jobs\Computer Field Jobs\ComputerFields\obj\Debug\ComputerFields.LoginPage.resources
+C:\Users\MSI\Documents\itgex\IT-GEX\sem4\databe programming\DBProgrammingProject\Computer Field Jobs\Computer Field Jobs\ComputerFields\obj\Debug\ComputerFields.SplashScreen.resources
+C:\Users\MSI\Documents\itgex\IT-GEX\sem4\databe programming\DBProgrammingProject\Computer Field Jobs\Computer Field Jobs\ComputerFields\obj\Debug\mdiExample.MDINBCC.resources
+C:\Users\MSI\Documents\itgex\IT-GEX\sem4\databe programming\DBProgrammingProject\Computer Field Jobs\Computer Field Jobs\ComputerFields\obj\Debug\ComputerFields.Properties.Resources.resources
+C:\Users\MSI\Documents\itgex\IT-GEX\sem4\databe programming\DBProgrammingProject\Computer Field Jobs\Computer Field Jobs\ComputerFields\obj\Debug\ComputerFields.SubjectRelatedJobs.resources
+C:\Users\MSI\Documents\itgex\IT-GEX\sem4\databe programming\DBProgrammingProject\Computer Field Jobs\Computer Field Jobs\ComputerFields\obj\Debug\ComputerFields.csproj.GenerateResource.cache
+C:\Users\MSI\Documents\itgex\IT-GEX\sem4\databe programming\DBProgrammingProject\Computer Field Jobs\Computer Field Jobs\ComputerFields\obj\Debug\ComputerFields.csproj.CoreCompileInputs.cache
+C:\Users\MSI\Documents\itgex\IT-GEX\sem4\databe programming\DBProgrammingProject\Computer Field Jobs\Computer Field Jobs\ComputerFields\obj\Debug\ComputerFields.exe
+C:\Users\MSI\Documents\itgex\IT-GEX\sem4\databe programming\DBProgrammingProject\Computer Field Jobs\Computer Field Jobs\ComputerFields\obj\Debug\ComputerFields.pdb
+C:\Users\MSI\Documents\itgex\IT-GEX\sem4\databe programming\DBProgrammingProject\Computer Field Jobs\Computer Field Jobs\ComputerFields\obj\Debug\ComputerFields.about.resources

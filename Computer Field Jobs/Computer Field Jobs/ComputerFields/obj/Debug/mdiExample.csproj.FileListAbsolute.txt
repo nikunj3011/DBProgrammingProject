@@ -1,0 +1,23 @@
+C:\Users\jber5\OneDrive\NBCC\Second Year courses\DataBase_Programming_Nbcc\mdiExample\mdiExample\bin\Debug\mdiExample.exe.config
+C:\Users\jber5\OneDrive\NBCC\Second Year courses\DataBase_Programming_Nbcc\mdiExample\mdiExample\bin\Debug\mdiExample.exe
+C:\Users\jber5\OneDrive\NBCC\Second Year courses\DataBase_Programming_Nbcc\mdiExample\mdiExample\bin\Debug\mdiExample.pdb
+C:\Users\jber5\OneDrive\NBCC\Second Year courses\DataBase_Programming_Nbcc\mdiExample\mdiExample\obj\Debug\mdiExample.csprojAssemblyReference.cache
+C:\Users\jber5\OneDrive\NBCC\Second Year courses\DataBase_Programming_Nbcc\mdiExample\mdiExample\obj\Debug\mdiExample.Properties.Resources.resources
+C:\Users\jber5\OneDrive\NBCC\Second Year courses\DataBase_Programming_Nbcc\mdiExample\mdiExample\obj\Debug\mdiExample.csproj.GenerateResource.cache
+C:\Users\jber5\OneDrive\NBCC\Second Year courses\DataBase_Programming_Nbcc\mdiExample\mdiExample\obj\Debug\mdiExample.csproj.CoreCompileInputs.cache
+C:\Users\jber5\OneDrive\NBCC\Second Year courses\DataBase_Programming_Nbcc\mdiExample\mdiExample\obj\Debug\mdiExample.exe
+C:\Users\jber5\OneDrive\NBCC\Second Year courses\DataBase_Programming_Nbcc\mdiExample\mdiExample\obj\Debug\mdiExample.pdb
+C:\Users\jber5\OneDrive\NBCC\Second Year courses\DataBase_Programming_Nbcc\mdiExample\mdiExample\obj\Debug\mdiExample.MDINBCC.resources
+C:\Users\jber5\OneDrive\NBCC\Second Year courses\DataBase_Programming_Nbcc\mdiExample\mdiExample\obj\Debug\mdiExample.frmInstructors.resources
+D:\wut down\mdiExample\mdiExample\mdiExample\bin\Debug\mdiExample.exe.config
+D:\wut down\mdiExample\mdiExample\mdiExample\bin\Debug\mdiExample.exe
+D:\wut down\mdiExample\mdiExample\mdiExample\bin\Debug\mdiExample.pdb
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\mdiExample.csprojAssemblyReference.cache
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\mdiExample.frmInstructors.resources
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\mdiExample.MDINBCC.resources
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\mdiExample.Properties.Resources.resources
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\mdiExample.csproj.GenerateResource.cache
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\mdiExample.csproj.CoreCompileInputs.cache
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\mdiExample.exe
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\mdiExample.pdb
+D:\wut down\mdiExample\mdiExample\mdiExample\obj\Debug\mdiExample.Form1.resources
