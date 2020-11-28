@@ -21,7 +21,7 @@ namespace ComputerFields
 
         private void SubjectRelatedJobs_Load(object sender, EventArgs e)
         {
-            String command = "SELECT SubjectName,JobName FROM Subject_RelatedJobs SR JOIN CSSubjects sub ON sub.SubjectID = SR.SubjectID JOIN Jobs job ON job.JobID = SR.JobID; ";
+            String command = "SELECT JobName,SubjectName FROM Subject_RelatedJobs SR JOIN CSSubjects sub ON sub.SubjectID = SR.SubjectID JOIN Jobs job ON job.JobID = SR.JobID ORDER BY JobName; ";
             SqlCommand sql = new SqlCommand(command);
             DataTable videoGame = access.GetDataTable(sql);
 
