@@ -67,7 +67,7 @@ namespace mdiExample
             lastSubjectId = Convert.ToInt32(ds.Tables[1].Rows[0]["LastSubjectId"]);
             currentRecord = Convert.ToInt32(ds.Tables[1].Rows[0]["RowNumber"]);
 
-            //Which item we are on in the count
+            //Which item we are on in the count 
             label6.Text = $"Displaying Subject {currentRecord} of ?";
 
         }
