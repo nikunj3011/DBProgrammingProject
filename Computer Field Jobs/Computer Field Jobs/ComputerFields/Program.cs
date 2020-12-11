@@ -17,7 +17,7 @@ namespace ComputerFields
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MDINBCC());
+            Application.Run(new LoginPage());
         }
     }
 }

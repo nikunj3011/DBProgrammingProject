@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComputerFields.sql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace ComputerFields
 {
     public partial class frmAddJobs : Form
     {
+        private IJobRepo jobRepo;
         public frmAddJobs()
         {
             InitializeComponent();
+            jobRepo = JobFactory.jobRepo();
         }
         private FormState currentState;
         int currentRecord = 0;
@@ -31,7 +34,7 @@ namespace ComputerFields
 
         private void LoadFirstJob()
         {
-            var JobId = DataAccess.GetValue("SELECT TOP (1) JobID FROM Jobs ORDER BY JobName");
+            int JobId = jobRepo.GetFirstJob();
             firstJobId = Convert.ToInt32(JobId);
             currentJobId = firstJobId;
             LoadJobDetails();
@@ -41,38 +44,8 @@ namespace ComputerFields
         {
             //Clear any errors in the error provider
             //errProvider.Clear();
-
-            string[] sqlStatements = new string[]
-            {
-                $"SELECT * FROM Jobs WHERE JobID = {currentJobId}",
-                $@"
-                SELECT 
-                (
-                    SELECT TOP(1) JobID as FirstJobId FROM Jobs ORDER BY JobName
-                ) as FirstJobId,
-                q.PreviousJobId,
-                q.NextJobId,
-                (
-                    SELECT TOP(1) JobID as LastJobId FROM Jobs ORDER BY JobName Desc
-                ) as LastJobId,
-                q.RowNumber
-                FROM
-                (
-                    SELECT JobID, JobName,
-                    LEAD(JobID) OVER(ORDER BY JobName) AS NextJobId,
-                    LAG(JobID) OVER(ORDER BY JobName) AS PreviousJobId,
-                    ROW_NUMBER() OVER(ORDER BY JobName) AS 'RowNumber'
-                    FROM Jobs
-                ) AS q
-                WHERE q.JobID = {currentJobId}
-                ORDER BY q.JobName".Replace(System.Environment.NewLine," "),
-                "SELECT COUNT(JobID) as JobCount FROM Jobs"
-            };
-
-
-
             DataSet ds = new DataSet();
-            ds = DataAccess.GetDataa(sqlStatements);
+            ds = jobRepo.statements(currentJobId);
 
             DataRow selectedJob = ds.Tables[0].Rows[0];
 
@@ -431,7 +404,7 @@ namespace ComputerFields
                 string Type,
                 string Description)
         {
-            return sqlJobMaintenance.SaveJobChanges(
+            return jobRepo.SaveJobChanges(
                 Convert.ToInt32(JobID),
                 JobName,
                 JobLevel,
@@ -448,7 +421,7 @@ namespace ComputerFields
                 string Description
             )
         {
-            return sqlJobMaintenance.CreateNewJob( 
+            return jobRepo.CreateNewJob( 
                 JobName,
                 JobLevel,
                 Convert.ToDouble(EstimatedPay),
@@ -458,7 +431,7 @@ namespace ComputerFields
 
         private int DeleteJob(string JobID)
         {
-            return sqlJobMaintenance.DeleteJob(Convert.ToInt32(JobID));
+            return jobRepo.DeleteJob(Convert.ToInt32(JobID));
         }
 
         #endregion

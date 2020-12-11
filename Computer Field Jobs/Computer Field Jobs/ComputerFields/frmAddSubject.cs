@@ -1,4 +1,5 @@
 ﻿using ComputerFields;
+using ComputerFields.sql;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,9 +16,11 @@ namespace mdiExample
 {
     public partial class frmAddSubject : Form
     {
+        private ISubjectRepo subjectRepo;
         public frmAddSubject()
         {
             InitializeComponent();
+            subjectRepo = SubjectFactory.subjectRepo();
         }
         private FormState currentState;
         int currentRecord = 0;
@@ -34,7 +37,7 @@ namespace mdiExample
 
         private void LoadFirstSubject()
         {
-            var subjectId = DataAccess.GetValue("SELECT TOP (1) SubjectID FROM CSSubjects ORDER BY SubjectName");
+            int subjectId = subjectRepo.GetFirstSubject();
             firstSubjectId = Convert.ToInt32(subjectId);
             currentSubjectId = firstSubjectId;
             LoadSubjectDetails();
@@ -43,38 +46,11 @@ namespace mdiExample
         private void LoadSubjectDetails()
         {
             //Clear any errors in the error provider
-            errProvider.Clear();
-
-            string[] sqlStatements = new string[]
-            {
-                $"SELECT * FROM CSSubjects WHERE SubjectID = {currentSubjectId}",
-                $@"
-                SELECT 
-                (
-                    SELECT TOP(1) SubjectID as FirstSubjectId FROM CSSubjects ORDER BY SubjectName
-                ) as FirstSubjectId,
-                q.PreviousSubjectId,
-                q.NextSubjectId,
-                (
-                    SELECT TOP(1) SubjectID as LastSubjectId FROM CSSubjects ORDER BY SubjectName Desc
-                ) as LastSubjectId,
-                q.RowNumber
-                FROM
-                (
-                    SELECT SubjectID, SubjectName,
-                    LEAD(SubjectID) OVER(ORDER BY SubjectName) AS NextSubjectId,
-                    LAG(SubjectID) OVER(ORDER BY SubjectName) AS PreviousSubjectId,
-                    ROW_NUMBER() OVER(ORDER BY SubjectName) AS 'RowNumber'
-                    FROM CSSubjects
-                ) AS q
-                WHERE q.SubjectID = {currentSubjectId}
-                ORDER BY q.SubjectName".Replace(System.Environment.NewLine," "),
-                "SELECT COUNT(SubjectID) as SubjectCount FROM CSSubjects"
-            };
+            //errProvider.Clear();
 
 
             DataSet ds = new DataSet();
-            ds = DataAccess.GetDataa(sqlStatements);
+            ds = subjectRepo.statements(currentSubjectId);
 
             DataRow selectedSubject = ds.Tables[0].Rows[0];
 
@@ -436,7 +412,7 @@ namespace mdiExample
                 string Description,
                 string Language)
         {
-            return sqlSubjectMaintenance.SaveSubjectChanges(
+            return subjectRepo.SaveSubjectChanges(
                 Convert.ToInt32(SubjectID),
                 SubjectName,
                 SubjectLevel,
@@ -453,7 +429,7 @@ namespace mdiExample
                 string Language
             )
         {
-            return sqlSubjectMaintenance.CreateNewSubject(
+            return subjectRepo.CreateNewSubject(
                 SubjectName,
                 SubjectLevel,
                 Convert.ToDouble(Duration),
@@ -463,7 +439,7 @@ namespace mdiExample
 
         private int DeleteSubject(string SubjectID)
         {
-            return sqlSubjectMaintenance.DeleteSubject(Convert.ToInt32(SubjectID));
+            return subjectRepo.DeleteSubject(Convert.ToInt32(SubjectID));
         }
 
         #endregion

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace ComputerFields
 {
-    class sqlJobMaintenance
+    public class sqlJobMaintenance : IJobRepo
     {
-        public static int SaveJobChanges(
+        public int SaveJobChanges(
                 int JobID,
                 string JobName,
                 string JobLevel,
@@ -41,7 +42,7 @@ namespace ComputerFields
         }
 
 
-        public static int CreateNewJob(
+        public int CreateNewJob(
                 string JobName,
                 string JobLevel,
                 double EstimatedPay,
@@ -79,7 +80,7 @@ namespace ComputerFields
 
         }
 
-        public static int DeleteJob(int JobID)
+        public int DeleteJob(int JobID)
         {
             string deleteSqlQuery = "DELETE FROM Jobs WHERE JobID = @JobID";
 
@@ -89,6 +90,47 @@ namespace ComputerFields
             int rowsAffected = DataAccess.ExecuteNonQuery(cmd);
 
             return rowsAffected;
+        }
+
+        public int GetFirstJob()
+        {
+            string cmd = "SELECT TOP (1) JobID FROM Jobs ORDER BY JobName";
+            //var cmd = new SqlCommand(query);
+            var dt = DataAccess.GetValue(cmd);
+            return (int)dt;
+        }
+
+        public DataSet statements(int s)
+        {
+            string[] sqlStatements = new string[]
+            {
+                $"SELECT * FROM Jobs WHERE JobID = {s}",
+                $@"
+                SELECT 
+                (
+                    SELECT TOP(1) JobID as FirstJobId FROM Jobs ORDER BY JobName
+                ) as FirstJobId,
+                q.PreviousJobId,
+                q.NextJobId,
+                (
+                    SELECT TOP(1) JobID as LastJobId FROM Jobs ORDER BY JobName Desc
+                ) as LastJobId,
+                q.RowNumber
+                FROM
+                (
+                    SELECT JobID, JobName,
+                    LEAD(JobID) OVER(ORDER BY JobName) AS NextJobId,
+                    LAG(JobID) OVER(ORDER BY JobName) AS PreviousJobId,
+                    ROW_NUMBER() OVER(ORDER BY JobName) AS 'RowNumber'
+                    FROM Jobs
+                ) AS q
+                WHERE q.JobID = {s}
+                ORDER BY q.JobName".Replace(System.Environment.NewLine," "),
+                "SELECT COUNT(JobID) as JobCount FROM Jobs"
+            };
+            DataSet ds = new DataSet();
+            ds = DataAccess.GetDataa(sqlStatements);
+            return ds;
         }
 
     }
